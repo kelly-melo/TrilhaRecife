@@ -1,0 +1,1 @@
+void salvar_sessao(int acertos, int tentativas, int dicas, int pontos);
