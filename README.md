@@ -1,194 +1,518 @@
-# 📍 Recife na Ponta da Língua – Desafio das Datas
+# 📍 Trilha Recife
 
 ## 🧠 Sobre o Projeto
 
-O **Recife na Ponta da Língua – Desafio das Datas** é um jogo interativo baseado em adivinhação, focado na história e cultura da cidade de Recife - Pernambuco.
+**Trilha Recife** é um jogo interativo que transforma a história de Recife em uma experiência de exploração, estratégia e descoberta.
 
-Diferente de um quiz tradicional, o jogo propõe que o jogador descubra datas históricas importantes, recebendo dicas de **“maior” ou “menor”** até acertar.
+O jogador percorre uma **linha do tempo gamificada**, avançando por diferentes períodos históricos enquanto enfrenta desafios variados e toma decisões que impactam seu progresso.
 
----
+Ao longo da jornada, o jogo propõe mais do que respostas diretas: o jogador analisa eventos, organiza sequências cronológicas, interpreta pistas e desenvolve estratégias para avançar na trilha.
 
-## 🎯 Problema
+Com progressão por fases, sistema de pontuação, vidas e conquistas, a experiência se constrói a partir das escolhas feitas em cada etapa.
 
-Muitas pessoas, inclusive moradores, não conhecem profundamente a história e os acontecimentos importantes de Recife, especialmente no que diz respeito à linha do tempo histórica.
+**Trilha Recife transforma o aprendizado em uma jornada jogável, onde entender a história faz parte do avanço no jogo.**
 
----
-
-## 💡 Solução
-
-Criar um jogo interativo que:
-
-* Estimule o aprendizado histórico de forma dinâmica
-* Engaje o jogador com mecânica de tentativa e erro
-* Reforce o conhecimento por meio de feedback contínuo
 
 ---
 
-## 🎮 Visão Geral do Produto
+# 🎯 Problema
 
-O jogador recebe um evento histórico (ex: fundação do Recife) e deve adivinhar o ano correto.
+Muitas pessoas, inclusive moradores, conhecem pouco a história do Recife e, quando conhecem, frequentemente a aprendizagem é linear e pouco engajante.
 
-A cada tentativa, o sistema informa se o valor correto é:
+Além disso:
 
-* 🔼 Maior
-* 🔽 Menor
-
-O jogo continua até o acerto.
-
----
-
-## 👥 Equipe
-
-* Elisa Martins Galindo Santos
-* Kelly Priscilla de Siqueira Melo
-* Maria Eduarda Vasconcelos da Silva
-* Pedro Henrique Marques Feitosa
+* quizzes tradicionais são pouco imersivos;
+* decorar datas isoladas gera baixo engajamento;
+* jogos educativos costumam ter pouca profundidade estratégica.
 
 ---
 
-## 🧩 Papéis no Projeto
+# 💡 Solução
 
-* **Maria Eduarda Vasconcelos da Silva** – *Product Owner / Analista de Requisitos*
-  Responsável pela definição inicial e organização das histórias de usuário, garantindo que representassem corretamente as necessidades do produto.
+Criar um jogo histórico interativo que mistura:
 
-* **Kelly Priscilla de Siqueira Melo** – *Scrum Master / Gestão de Projeto*
-  Responsável pela organização e acompanhamento das tarefas, gestão do fluxo de trabalho e alinhamento da equipe ao longo do desenvolvimento.
+✅ Linha do tempo gamificada
+✅ Progressão por fases e trilhas
+✅ Desafios históricos variados
+✅ Sistema de pontuação e conquistas
+✅ Perfil e estatísticas do jogador
+✅ Análise de padrões de jogo (PIF)
 
-* **Elisa Martins Galindo Santos** – *Analista de Requisitos / Gestão de Backlog*
-  Responsável pela estruturação e priorização do backlog, organizando as histórias de usuário conforme valor e viabilidade.
+O jogador não apenas responde perguntas:
 
-* **Pedro Henrique Marques Feitosa** – *Desenvolvedor*
-  Responsável pela implementação do protótipo do jogo, desenvolvendo a lógica principal da aplicação.
+Ele **navega pela história do Recife.**
 
 ---
 
-## 📋 Histórias de Usuário (Padrão 3C)
+# 🎮 Visão Geral do Produto
+
+## Conceito do jogo
+
+O jogador percorre uma trilha histórica.
+
+Cada casa da trilha apresenta um tipo diferente de desafio.
+
+## 🧩 Tipos de Desafios
+
+## 1. Depois ou Antes? (Desafio Cronológico)
+
+Escolher qual evento ocorreu antes ou depois de outro.
+
+Ex:
+
+"O que aconteceu depois da Proclamação da República?"
+
+* Inauguração da Ponte Buarque de Macedo
+* Confederação do Equador
+
+---
+
+## 2. Ordene os Eventos
+
+Organizar 3 ou 4 eventos na ordem correta.
+
+Ex:
+
+* Invasão Holandesa
+* Fundação do Recife
+* Expulsão dos Holandeses
+* Revolução Pernambucana
+
+---
+
+## 3. Ano Perdido
+
+Descobrir o ano correto com dicas “maior/menor” (mecânica original preservada).
+
+Ex:
+
+Em que ano ocorreu a Revolução Pernambucana?
+
+Tentativas recebem:
+
+🔼 Mais tarde
+🔽 Mais cedo
+
+---
+
+## 4. Trilha de Decisão Histórica
+
+O jogador escolhe caminhos A ou B.
+
+Um leva a avanço.
+Outro faz retroceder.
+
+Gamificação inspirada em board games.
+
+---
+
+## 5. Cartas de Contexto
+
+Cartas especiais:
+
+* Dica histórica
+* Evento surpresa
+* Bônus de pontos
+* Segunda chance
+* “Volte 2 casas”
+
+---
+
+## 6. Missões Temáticas
+
+Fases por temas:
+
+* Recife Colonial
+* Ocupação Holandesa
+* Pernambuco Revolucionário
+* Recife Moderno
+* Cultura e Patrimônio
+
+Cada fase possui chefe final (desafio especial).
+
+---
+
+# ⭐ Loop Principal do Jogo
+
+Fluxo:
+
+Início → Escolha de fase → Desafios → Feedback → Progressão → Estatísticas → Próxima fase
+
+Não é apenas "acertar uma data".
+
+Existe:
+
+* progressão
+* estratégia
+* desempenho
+* exploração
+
+---
+
+# 🏆 Mecânicas de Gamificação
+
+## Sistema de Pontos
+
+Pontos por:
+
+* acerto
+* streak de acertos consecutivos
+* poucas tentativas
+* uso eficiente de dicas
+* decisões estratégicas
+
+---
+
+## Vidas
+
+Jogador começa com 3 vidas.
+
+Erros podem:
+
+* consumir vida
+* fazer voltar casas
+* reduzir pontuação
+
+---
+
+## Conquistas (Achievements)
+
+Exemplos:
+
+🥇 Cronista do Recife
+Complete 10 eventos sem erro
+
+🏛 Mestre da História
+Complete todas as fases
+
+⚡ Estrategista
+Vencer usando menos de 2 dicas
+
+🧠 Memória de Ferro
+Acertar 5 desafios de ordenação seguidos
+
+---
+
+## Ranking
+
+* ranking local
+* pontuação pessoal
+* recordes
+* melhores sessões
+
+---
+
+# 📊 Sistema de Perfil e Estatísticas
+
+Além do jogo:
+
+Modo “Analisar Desempenho”
+
+O sistema salva sessões e gera:
+
+## Métricas
+
+* total de partidas
+* média de tentativas
+* melhor sessão
+* pior sessão
+* desvio padrão de desempenho
+* taxa de acertos por tipo de desafio
+* viés do jogador
+
+  * arrisca cedo demais?
+  * exagera nas dicas?
+  * usa estratégia binária eficiente?
+
+---
+
+# 🤖 Sistema de Avaliação do Jogador
+
+Ao fim das sessões:
+
+Exemplos:
+
+“Você costuma começar com palpites muito baixos.”
+
+“Seu padrão se aproxima de busca binária eficiente.”
+
+“Você erra mais em eventos republicanos do que coloniais.”
+
+Isso transforma estatística em feedback pedagógico.
+
+---
+
+# 👥 Público-alvo
+
+* estudantes
+* turistas
+* moradores do Recife
+* professores
+* escolas
+* jogadores casuais interessados em história
+
+---
+
+# 🧭 Diferenciais do Produto
+
+Não é quiz.
+
+Não é só jogo de adivinhar datas.
+
+É mistura de:
+
+* timeline game
+* puzzle histórico
+* estratégia
+* análise de desempenho
+* aprendizado adaptativo
+
+---
+
+# 👥 Equipe
+
+Elisa Martins Galindo Santos
+Kelly Priscilla de Siqueira Melo
+Maria Eduarda Vasconcelos da Silva
+Pedro Henrique Marques Feitosa
+
+---
+
+# 🧩 Papéis no Projeto
+
+## Maria Eduarda Vasconcelos da Silva
+
+Product Owner / Game Designer
+
+Responsável por:
+
+* visão do produto
+* regras dos desafios
+* histórias de usuário
+* experiência do jogador
+
+---
+
+## Kelly Priscilla de Siqueira Melo
+
+Scrum Master / UX Strategy
+
+Responsável por:
+
+* gestão do projeto
+* organização das entregas
+* prototipação e fluxo do jogo
+* documentação e README
+
+---
+
+## Elisa Martins Galindo Santos
+
+Analista de Requisitos / Backlog Owner
+
+Responsável por:
+
+* backlog
+* priorização
+* requisitos funcionais
+* critérios de aceitação
+
+---
+
+## Pedro Henrique Marques Feitosa
+
+Desenvolvedor / Arquitetura do Protótipo
+
+Responsável por:
+
+* lógica do jogo
+* prototipação funcional
+* futura implementação em C
+
+---
+
+# 📋 Histórias de Usuário
+
+## EPIC 1 — Progressão e exploração
 
 ### US01
 
-* **Card:** Como jogador iniciante, quero ver instruções do jogo, para entender como jogar.
-* **Conversation:** Explicação sobre objetivo e funcionamento.
-* **Confirmation:** Tela inicial com instruções claras.
+Como jogador,
+quero avançar por uma trilha histórica com múltiplos caminhos,
+para explorar a história do Recife de forma progressiva.
+
+Confirmação:
+
+* mapa navegável
+* progressão por fases
+* caminhos corretos/incorretos
+
+---
 
 ### US02
 
-* **Card:** Como jogador, quero iniciar uma partida, para começar o jogo.
-* **Conversation:** Sistema sorteia uma data.
-* **Confirmation:** Partida inicia com valor definido.
+Como jogador,
+quero enfrentar diferentes tipos de desafios históricos,
+para que a experiência não seja repetitiva.
+
+Confirmação:
+
+* desafios cronológicos
+* ordenação
+* ano perdido
+* trilhas decisórias
+
+---
 
 ### US03
 
-* **Card:** Como jogador, quero inserir um palpite, para tentar adivinhar a data.
-* **Conversation:** Entrada numérica via teclado.
-* **Confirmation:** Sistema aceita apenas números válidos.
+Como jogador,
+quero desbloquear novas fases temáticas,
+para sentir evolução no jogo.
+
+Confirmação:
+
+* fases bloqueadas/desbloqueadas
+* progresso salvo
+
+---
+
+# EPIC 2 — Estratégia e gamificação
 
 ### US04
 
-* **Card:** Como jogador, quero receber feedback (maior/menor), para ajustar meu palpite.
-* **Conversation:** Comparação entre valores.
-* **Confirmation:** Retorno correto após cada tentativa.
+Como jogador,
+quero acumular pontos e conquistas,
+para ser recompensado pelo desempenho.
+
+---
 
 ### US05
 
-* **Card:** Como jogador, quero saber quando acertei, para finalizar a partida.
-* **Conversation:** Mensagem de acerto.
-* **Confirmation:** Jogo encerra ao acertar.
+Como jogador,
+quero utilizar dicas e cartas especiais,
+para adotar estratégias durante desafios.
+
+---
 
 ### US06
 
-* **Card:** Como jogador, quero ver quantas tentativas usei, para avaliar meu desempenho.
-* **Conversation:** Contador de tentativas.
-* **Confirmation:** Número exibido corretamente.
+Como jogador,
+quero ter vidas e consequências por erro,
+para que minhas escolhas tenham impacto.
+
+---
+
+# EPIC 3 — Aprendizagem e análise
 
 ### US07
 
-* **Card:** Como jogador, quero jogar novamente, para tentar melhorar meu resultado.
-* **Conversation:** Opção de reinício.
-* **Confirmation:** Novo jogo inicia corretamente.
+Como jogador,
+quero receber feedback histórico contextual após cada desafio,
+para aprender com os acertos e erros.
+
+---
 
 ### US08
 
-* **Card:** Como jogador, quero que minhas partidas sejam registradas, para acompanhar meu desempenho.
-* **Conversation:** Salvamento automático das partidas.
-* **Confirmation:** Dados persistidos após o jogo.
+Como jogador,
+quero visualizar estatísticas do meu desempenho,
+para entender como estou evoluindo.
+
+---
 
 ### US09
 
-* **Card:** Como jogador, quero visualizar estatísticas das minhas partidas, para entender meu desempenho.
-* **Conversation:** Exibição de média e histórico.
-* **Confirmation:** Dados exibidos corretamente.
+Como jogador,
+quero receber sugestões estratégicas baseadas nas minhas partidas,
+para melhorar minha performance.
+
+---
+
+# EPIC 4 — Persistência e histórico (PIF)
 
 ### US10
 
-* **Card:** Como jogador, quero receber um resumo do meu desempenho, para saber se estou melhorando.
-* **Conversation:** Feedback baseado em desempenho.
-* **Confirmation:** Mensagens exibidas conforme resultados.
+Como jogador,
+quero que minhas sessões sejam registradas,
+para acompanhar meu histórico.
 
 ---
 
-## 🗂️ Backlog
+### US11
 
-O backlog foi organizado com base na prioridade das funcionalidades:
-
-### 🔴 Alta prioridade
-
-* Lógica de adivinhação (maior/menor)
-* Entrada de dados (palpite)
-* Feedback ao jogador
-* Contador de tentativas
-
-### 🟡 Média prioridade
-
-* Reinício do jogo
-* Interface básica
-* Instruções iniciais
-
-### 🟢 Baixa prioridade
-
-* Estatísticas
-* Histórico de partidas
-* Feedback de desempenho
-
-📸 **Print do backlog:** https://files.fm/u/k9ud3cqvdc
+Como jogador,
+quero consultar relatórios analíticos das partidas,
+para identificar padrões.
 
 ---
 
-## 📊 Board do Projeto
+### US12
 
-📎 **Link:** https://www.notion.so/33d7ce26612080c097c2df14dc4f5c91?v=33d7ce266120801ab784000c67441be4&source=copy_link
-
-📸 **Print do board:** https://files.fm/u/fjgdnpx6uk
-
----
-
-## 🎨 Protótipos
-
-📎 **Figma:**
-[https://www.figma.com/make/PzFJdQCQWXgA54mMnxHAkY/Recife-na-Ponta-da-L%C3%ADngua?p=f&t=7ODIo8jIajs0tytB-0&fullscreen=1](https://www.figma.com/make/PzFJdQCQWXgA54mMnxHAkY/Recife-na-Ponta-da-L%C3%ADngua?p=f&t=7ODIo8jIajs0tytB-0&fullscreen=1)
-
-📽️ **Screencast:**
-[https://youtu.be/dUyouVpBnrw](https://youtu.be/dUyouVpBnrw)
+Como jogador,
+quero comparar meu desempenho em rankings,
+para aumentar engajamento.
 
 ---
 
-## 💻 Repositório
+# 🗂️ Product Backlog (priorizado)
 
-📎 **GitHub:**
-[https://github.com/kelly-melo/RecifenaPontadaLingua](https://github.com/kelly-melo/RecifenaPontadaLingua)
+## 🔴 Alta prioridade (MVP FDS)
+
+* Mapa da trilha do tempo
+* Desafios cronológicos
+* Ordenação de eventos
+* Sistema de progressão
+* Pontuação
+* Feedback contextual
+* Conquistas básicas
 
 ---
 
-## 📌 Status do Projeto
+## 🟡 Média prioridade
+
+* Vidas
+* Cartas especiais
+* Ranking
+* Fases temáticas
+* Dicas estratégicas
+
+---
+
+## 🟢 Baixa prioridade / expansão
+
+* Relatórios analíticos avançados
+* Perfil completo do jogador
+* Sugestões por heurísticas
+* Modos extras
+
+---
+
+# 📎 Board do Projeto
+
+[link do board](https://www.notion.so/33d7ce26612080c097c2df14dc4f5c91?v=33d7ce266120801ab784000c67441be4&source=copy_link)
+
+📸 [Print do board](https://files.fm/u/fjgdnpx6uk)
+
+📸 Print backlog
+
+---
+
+# 🎥 Screencast
+
+[link do screencast](https://www.youtube.com/watch?v=dUyouVpBnrw)
+
+---
+
+# 💻 Repositório
+
+[link github](https://github.com/kelly-melo/RecifenaPontadaLingua)
+
+---
+
+# 📌 Status do Projeto
 
 🚧 Em desenvolvimento
 
----
-
-## ⚙️ Observações
-
-Este projeto segue os requisitos da disciplina, incluindo:
-
-* Definição clara de histórias de usuário
-* Priorização de backlog
-* Organização em board
-* Estruturação para desenvolvimento em C (modular, com persistência e lógica iterativa)
+Fase atual:
+Repaginação do produto e prototipação das novas mecânicas.
