@@ -506,7 +506,7 @@ para aumentar engajamento.
 
 # 💻 Repositório
 
-[link github](https://github.com/kelly-melo/RecifenaPontadaLingua)
+[link github](https://github.com/kelly-melo/TrilhaRecife)
 
 ---
 
