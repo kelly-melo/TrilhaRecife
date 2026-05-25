@@ -47,8 +47,7 @@ const resultTitle = document.getElementById('result-title');
 const resultPoints = document.getElementById('result-points');
 const resultAnswer = document.getElementById('result-answer');
 const resultFact = document.getElementById('result-fact');
-const progressContainer = document.getElementById('progress-container');
-const progressFill = document.getElementById('progress-fill');
+const btnNextPhase = document.getElementById('btn-next-phase');
 
 
 function fireConfetti() {
@@ -145,10 +144,8 @@ function loadEvent() {
     quizScreen.classList.remove('hidden');
     
     
+    // Reseta animações do card
     quizCardContainer.classList.remove('flip-out', 'shake-animation');
-    
-    if(progressContainer) progressContainer.classList.add('hidden');
-    if(progressFill) progressFill.style.width = '0%';
     
     
     document.querySelectorAll('.board-slot').forEach(s => {
@@ -226,7 +223,7 @@ function handleTimeout() {
             resultAnswer.innerHTML = `O ano correto era: <strong>${eventoAtual.ano}</strong>`;
             resultFact.innerHTML = `<strong>Fato Histórico:</strong> ${eventoAtual.contexto}`;
             
-            triggerAutoAdvance(25000); 
+            showResultPanel();
         }, 600);
     }, 800);
 }
@@ -277,7 +274,7 @@ function processGuess() {
             resultFact.innerHTML = `<strong>Curiosidade:</strong> ${eventoAtual.contexto}`;
             
             fireConfetti();
-            triggerAutoAdvance(25000); 
+            showResultPanel();
         }, 600); 
         
     } else {
@@ -306,30 +303,26 @@ function processGuess() {
                 resultAnswer.innerHTML = `O ano correto era: <strong>${eventoAtual.ano}</strong>`;
                 resultFact.innerHTML = `<strong>Fato Histórico:</strong> ${eventoAtual.contexto}`;
                 
-                triggerAutoAdvance(25000); 
+                showResultPanel();
             }, 600);
         }, 800); 
     }
 }
 
-function triggerAutoAdvance(durationMs = 4000) {
+function showResultPanel() {
     statusPontos.innerHTML = `<i class="fas fa-trophy"></i> Pontos: ${GameState.pontos}`;
-    
-    if(progressContainer) {
-        progressContainer.classList.remove('hidden');
-        progressFill.style.transition = `width ${durationMs}ms linear`;
-        setTimeout(() => { progressFill.style.width = '100%'; }, 50);
-    }
-    
-    setTimeout(() => {
-        currentEventIndex++;
-        if (currentEventIndex < eventos.length) {
-            loadEvent();
-        } else {
-            endGame();
-        }
-    }, durationMs);
+    btnNextPhase.classList.remove('hidden');
 }
+
+btnNextPhase.addEventListener('click', () => {
+    btnNextPhase.classList.add('hidden');
+    currentEventIndex++;
+    if (currentEventIndex < eventos.length) {
+        loadEvent();
+    } else {
+        endGame();
+    }
+});
 
 
 function endGame() {
