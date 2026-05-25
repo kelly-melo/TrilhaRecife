@@ -1,1 +1,8 @@
-void salvar_sessao(int acertos, int tentativas, int dicas, int pontos);
+#ifndef HISTORICO_H
+#define HISTORICO_H
+
+#include "jogo.h"
+
+void salvar_sessao(GameState *estado);
+
+#endif

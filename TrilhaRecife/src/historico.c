@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "historico.h"
 
-void salvar_sessao(int acertos, int tentativas, int dicas, int pontos) {
+void salvar_sessao(GameState *estado) {
     FILE *arquivo;
     arquivo = fopen("data/historico.csv", "a");
 
@@ -10,7 +10,7 @@ void salvar_sessao(int acertos, int tentativas, int dicas, int pontos) {
         return;
     }
 
-    fprintf(arquivo, "%d,%d,%d,%d\n", acertos, tentativas, dicas, pontos);
+    fprintf(arquivo, "%d,%d,%d,%d\n", estado->acertos, estado->tentativas, estado->dicas, estado->pontos);
     fclose(arquivo);
     printf("Sessao salva com sucesso!\n");
 }

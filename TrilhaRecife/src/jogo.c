@@ -3,25 +3,60 @@
 #include "jogo.h"
 #include "historico.h"
 
+#include <string.h>
+
+#define MAX_EVENTOS 50
+
 typedef struct {
     char descricao[100];
     int ano;
+    char contexto[255];
 } Evento;
 
-void jogar_partida() {
-    Evento eventos[] = {
-        {"Fundacao do Recife", 1537},
-        {"Invasao Holandesa", 1630},
-        {"Expulsao dos Holandeses", 1654},
-        {"Revolucao Pernambucana", 1817},
-        {"Proclamacao da Republica", 1889}
-    };
+int carregar_eventos(Evento eventos[]) {
+    FILE *arquivo = fopen("data/eventos.csv", "r");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir arquivo de eventos.\n");
+        return 0;
+    }
 
-    int total_eventos = 5;
-    int acertos = 0;
-    int tentativas_totais = 0;
-    int uso_dicas = 0;
-    int pontos = 0;
+    int i = 0;
+    char linha[400];
+    while (fgets(linha, sizeof(linha), arquivo) != NULL && i < MAX_EVENTOS) {
+        // Formato: Ano;Descricao;Contexto
+        char *token = strtok(linha, ";");
+        if (token != NULL) {
+            eventos[i].ano = atoi(token);
+            token = strtok(NULL, ";");
+            if (token != NULL) {
+                strncpy(eventos[i].descricao, token, sizeof(eventos[i].descricao) - 1);
+                eventos[i].descricao[sizeof(eventos[i].descricao) - 1] = '\0';
+                
+                token = strtok(NULL, "\n"); // Lê até o final da linha
+                if (token != NULL) {
+                    strncpy(eventos[i].contexto, token, sizeof(eventos[i].contexto) - 1);
+                    eventos[i].contexto[sizeof(eventos[i].contexto) - 1] = '\0';
+                } else {
+                    eventos[i].contexto[0] = '\0';
+                }
+                i++;
+            }
+        }
+    }
+    fclose(arquivo);
+    return i;
+}
+
+void jogar_partida() {
+    Evento eventos[MAX_EVENTOS];
+    int total_eventos = carregar_eventos(eventos);
+
+    if (total_eventos == 0) {
+        printf("Nenhum evento carregado. Abortando a partida.\n");
+        return;
+    }
+
+    GameState estado = {0, 0, 0, 0};
 
     printf("\n=== INICIO DA PARTIDA ===\n");
 
@@ -37,22 +72,23 @@ void jogar_partida() {
             scanf("%d", &palpite);
 
             tentativas_evento++;
-            tentativas_totais++;
+            estado.tentativas++;
 
             if (palpite == eventos[i].ano) {
                 printf("Correto!\n");
-                acertos++;
+                printf("Contexto: %s\n", eventos[i].contexto);
+                estado.acertos++;
                 acertou = 1;
 
                 if (tentativas_evento == 1)
-                    pontos += 10;
+                    estado.pontos += 10;
                 else if (tentativas_evento <= 3)
-                    pontos += 7;
+                    estado.pontos += 7;
                 else
-                    pontos += 5;
+                    estado.pontos += 5;
 
             } else {
-                uso_dicas++;
+                estado.dicas++;
 
                 if (palpite < eventos[i].ano)
                     printf("Dica: mais tarde\n");
@@ -62,27 +98,11 @@ void jogar_partida() {
         }
     }
 
-    salvar_sessao(acertos, tentativas_totais, uso_dicas, pontos);
+    salvar_sessao(&estado);
 
     printf("\n=== FIM DA PARTIDA ===\n");
-    printf("Acertos: %d\n", acertos);
-    printf("Tentativas: %d\n", tentativas_totais);
-    printf("Dicas usadas: %d\n", uso_dicas);
-    printf("Pontuacao: %d\n", pontos);
-}
-📄 src/historico.c
-#include <stdio.h>
-#include "historico.h"
-
-void salvar_sessao(int acertos, int tentativas, int dicas, int pontos) {
-    FILE *arquivo;
-    arquivo = fopen("data/historico.csv", "a");
-
-    if (arquivo == NULL) {
-        printf("Erro ao abrir arquivo de historico.\n");
-        return;
-    }
-
-    fprintf(arquivo, "%d,%d,%d,%d\n", acertos, tentativas, dicas, pontos);
-    fclose(arquivo);
-}
+    printf("Acertos: %d\n", estado.acertos);
+    printf("Tentativas: %d\n", estado.tentativas);
+    printf("Dicas usadas: %d\n", estado.dicas);
+    printf("Pontuacao: %d\n", estado.pontos);
+}
