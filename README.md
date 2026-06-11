@@ -1,3 +1,6 @@
+<img width="989" height="473" alt="image" src="https://github.com/user-attachments/assets/d3c8ecf5-c531-4b0b-8473-d417637ad8fa" />
+
+
 # 📍 Trilha Recife
 
 ## 🧠 Sobre o Projeto
