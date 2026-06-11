@@ -277,7 +277,6 @@ Não é só jogo de adivinhar datas.
 Elisa Martins Galindo Santos
 Kelly Priscilla de Siqueira Melo
 Maria Eduarda Vasconcelos da Silva
-Pedro Henrique Marques Feitosa
 
 ---
 
@@ -319,18 +318,6 @@ Responsável por:
 * priorização
 * requisitos funcionais
 * critérios de aceitação
-
----
-
-## Pedro Henrique Marques Feitosa
-
-Desenvolvedor / Arquitetura do Protótipo
-
-Responsável por:
-
-* lógica do jogo
-* prototipação funcional
-* futura implementação em C
 
 ---
 
