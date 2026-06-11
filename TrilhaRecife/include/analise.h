@@ -1,1 +1,0 @@
-void analisar_desempenho();
