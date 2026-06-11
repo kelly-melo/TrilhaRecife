@@ -1,4 +1,4 @@
-<img width="989" height="473" alt="image" src="https://github.com/user-attachments/assets/d3c8ecf5-c531-4b0b-8473-d417637ad8fa" />
+<img width="988" height="472" alt="image" src="https://github.com/user-attachments/assets/5e25b6d9-bc18-43d2-a6f9-e234b5f2846f" />
 
 
 # 📍 Trilha Recife
