@@ -12,6 +12,34 @@ Com sistema de pontuação, barra de progresso e feedback imediato, a experiênc
 
 ---
 
+## 🚀 Como Rodar o Jogo
+
+### Rodar localmente
+
+**Pré-requisitos:** nenhum. O jogo roda como HTML puro no navegador.
+
+**Passo a passo:**
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/kelly-melo/TrilhaRecife.git
+
+# 2. Acesse a pasta do projeto
+cd TrilhaRecife
+```
+
+**3.** Abra o arquivo `web/index.html` diretamente no seu navegador.
+
+Você pode fazer isso de duas formas:
+- Navegue até a pasta `web/` no explorador de arquivos e dê dois cliques em `index.html`
+- Ou arraste o arquivo `index.html` para uma aba aberta do navegador
+
+Pronto — o jogo abrirá e é só clicar em **"Iniciar Partida"**.
+
+> **Compatível com:** Chrome, Firefox, Edge e Safari nas versões recentes.
+
+---
+
 ## 🎯 Problema
 
 Muitas pessoas, inclusive moradores, conhecem pouco a história do Recife e, quando conhecem, a aprendizagem costuma ser linear e pouco engajante.
