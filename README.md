@@ -1,251 +1,224 @@
-<img width="988" height="472" alt="image" src="https://github.com/user-attachments/assets/5e25b6d9-bc18-43d2-a6f9-e234b5f2846f" />
-
-
 # 📍 Trilha Recife
 
 ## 🧠 Sobre o Projeto
 
-**Trilha Recife** é um jogo interativo que transforma a história de Recife em uma experiência de exploração, estratégia e descoberta.
+**Trilha Recife** é um jogo interativo que transforma a história de Recife e Pernambuco em uma experiência de descoberta e aprendizado.
 
-O jogador percorre uma **linha do tempo gamificada**, avançando por diferentes períodos históricos enquanto enfrenta desafios variados e toma decisões que impactam seu progresso.
+O jogador enfrenta uma sequência de **eventos históricos** e deve adivinhar o ano em que cada um ocorreu. A cada acerto ou erro, o jogo revela uma **curiosidade histórica** sobre o evento, tornando cada rodada uma oportunidade de aprender algo novo.
 
-Ao longo da jornada, o jogo propõe mais do que respostas diretas: o jogador analisa eventos, organiza sequências cronológicas, interpreta pistas e desenvolve estratégias para avançar na trilha.
+Com sistema de pontuação, barra de progresso e feedback imediato, a experiência recompensa o conhecimento e desperta curiosidade sobre a história da capital pernambucana.
 
-Com progressão por fases, sistema de pontuação, vidas e conquistas, a experiência se constrói a partir das escolhas feitas em cada etapa.
-
-**Trilha Recife transforma o aprendizado em uma jornada jogável, onde entender a história faz parte do avanço no jogo.**
-
+**Trilha Recife transforma o aprendizado em jogo, onde acertar o ano certo é só o começo.**
 
 ---
 
-# 🎯 Problema
+## 🎯 Problema
 
-Muitas pessoas, inclusive moradores, conhecem pouco a história do Recife e, quando conhecem, frequentemente a aprendizagem é linear e pouco engajante.
+Muitas pessoas, inclusive moradores, conhecem pouco a história do Recife e, quando conhecem, a aprendizagem costuma ser linear e pouco engajante.
 
 Além disso:
 
 * quizzes tradicionais são pouco imersivos;
 * decorar datas isoladas gera baixo engajamento;
-* jogos educativos costumam ter pouca profundidade estratégica.
+* o conteúdo histórico raramente vem acompanhado de contexto interessante.
 
 ---
 
-# 💡 Solução
+## 💡 Solução
 
 Criar um jogo histórico interativo que mistura:
 
-✅ Linha do tempo gamificada
-✅ Progressão por fases e trilhas
-✅ Desafios históricos variados
-✅ Sistema de pontuação e conquistas
-✅ Perfil e estatísticas do jogador
-✅ Análise de padrões de jogo (PIF)
+✅ Desafio de adivinhar o ano de eventos históricos
+✅ Feedback imediato de acerto ou erro
+✅ Curiosidades históricas a cada evento
+✅ Sistema de pontuação baseado na precisão
+✅ Progressão por eventos ao longo da sessão
 
-O jogador não apenas responde perguntas:
-
-Ele **navega pela história do Recife.**
+O jogador não apenas responde: ele **descobre a história do Recife a cada tentativa.**
 
 ---
 
-# 🎮 Visão Geral do Produto
+## 🎮 Visão Geral do Produto
 
-## Conceito do jogo
+### Conceito do jogo
 
-O jogador percorre uma trilha histórica.
+O jogador recebe o nome de um evento histórico de Pernambuco e deve digitar o ano em que ele ocorreu.
 
-Cada casa da trilha apresenta um tipo diferente de desafio.
+Cada resposta gera feedback imediato — acerto ou erro — seguido de uma curiosidade histórica contextualizada sobre aquele evento.
 
-## 🧩 Tipos de Desafios
+### 🧩 Mecânica Principal — Ano Perdido
 
-## 1. Depois ou Antes? (Desafio Cronológico)
+Dado o nome de um evento histórico, o jogador tenta descobrir o ano correto digitando sua resposta.
 
-Escolher qual evento ocorreu antes ou depois de outro.
+Exemplos de eventos:
 
-Ex:
+* "Em que ano Recife foi elevada à categoria de cidade?"
+* "Em que ano aconteceu a Insurreição Pernambucana?"
 
-"O que aconteceu depois da Proclamação da República?"
+Ao acertar:
 
-* Inauguração da Ponte Buarque de Macedo
-* Confederação do Equador
+> ✅ **RESPOSTA CORRETA!**
+> +10 Pontos
+> *Curiosidade: Após crescer como importante centro comercial e portuário, Recife foi oficialmente elevada à categoria de cidade e se tornou um dos principais polos econômicos e políticos do Brasil.*
 
----
+Ao errar:
 
-## 2. Ordene os Eventos
-
-Organizar 3 ou 4 eventos na ordem correta.
-
-Ex:
-
-* Invasão Holandesa
-* Fundação do Recife
-* Expulsão dos Holandeses
-* Revolução Pernambucana
+> ❌ **QUE PENA! VOCÊ ERROU.**
+> +0 Pontos
+> O ano secreto era: **1645**
+> *Fato Histórico: A Insurreição Pernambucana marcou o início da revolta contra os holandeses. Pernambucanos, cansados de serem dominados, uniram forças para recuperar o território tomado pelos invasores.*
 
 ---
 
-## 3. Ano Perdido
+## ⭐ Loop Principal do Jogo
 
-Descobrir o ano correto com dicas “maior/menor” (mecânica original preservada).
+```
+Tela inicial → Tutorial (Como Jogar) → Evento 1/10 → Tentativa → Feedback + Curiosidade → Evento 2/10 → ... → Resultado final
+```
 
-Ex:
-
-Em que ano ocorreu a Revolução Pernambucana?
-
-Tentativas recebem:
-
-🔼 Mais tarde
-🔽 Mais cedo
+A cada sessão, o jogador enfrenta **10 eventos históricos** em sequência.
 
 ---
 
-## 4. Trilha de Decisão Histórica
+## 🏆 Sistema de Pontuação
 
-O jogador escolhe caminhos A ou B.
+* Acerto: **+10 pontos**
+* Erro: **+0 pontos**
+* Pontuação máxima por sessão: **100 pontos**
 
-Um leva a avanço.
-Outro faz retroceder.
-
-Gamificação inspirada em board games.
-
----
-
-## 5. Cartas de Contexto
-
-Cartas especiais:
-
-* Dica histórica
-* Evento surpresa
-* Bônus de pontos
-* Segunda chance
-* “Volte 2 casas”
+A pontuação é exibida na barra superior durante toda a partida, junto com o contador de eventos (ex: Evento 2/10).
 
 ---
 
-## 6. Missões Temáticas
+## 📖 Como Jogar
 
-Fases por temas:
-
-* Recife Colonial
-* Ocupação Holandesa
-* Pernambuco Revolucionário
-* Recife Moderno
-* Cultura e Patrimônio
-
-Cada fase possui chefe final (desafio especial).
+1. O objetivo é adivinhar o ano correto de um evento histórico de Pernambuco.
+2. Digite o ano e clique em **Chutar**.
+3. O jogo informa se você acertou ou errou.
+4. Ao acertar, você ganha uma **curiosidade histórica** como recompensa.
+5. Ao errar, o **Fato Histórico** é revelado mesmo assim — porque aprender é parte do jogo.
 
 ---
 
-# ⭐ Loop Principal do Jogo
+## 📊 Interface e Telas
 
-Fluxo:
-
-Início → Escolha de fase → Desafios → Feedback → Progressão → Estatísticas → Próxima fase
-
-Não é apenas "acertar uma data".
-
-Existe:
-
-* progressão
-* estratégia
-* desempenho
-* exploração
+| Tela | Descrição |
+|------|-----------|
+| **Tela Inicial** | Logo do jogo e botão "Iniciar Partida" |
+| **Como Jogar** | Tutorial com as regras antes da partida começar |
+| **Desafio** | Pergunta do evento + campo de digitação do ano + botão Chutar |
+| **Feedback de Acerto** | "Resposta Correta!" + pontos ganhos + curiosidade histórica |
+| **Feedback de Erro** | "Que Pena! Você Errou." + ano correto revelado + fato histórico |
 
 ---
 
-# 🏆 Mecânicas de Gamificação
+## 📋 Histórias de Usuário
 
-## Sistema de Pontos
+### EPIC 1 — Experiência de jogo
 
-Pontos por:
+#### US01
+Como jogador,
+quero ver uma explicação das regras antes de começar,
+para entender como o jogo funciona sem precisar adivinhar.
 
-* acerto
-* streak de acertos consecutivos
-* poucas tentativas
-* uso eficiente de dicas
-* decisões estratégicas
-
----
-
-## Vidas
-
-Jogador começa com 3 vidas.
-
-Erros podem:
-
-* consumir vida
-* fazer voltar casas
-* reduzir pontuação
+Confirmação:
+* tela "Como Jogar" exibida antes da primeira partida
+* botão "Entendi" para avançar ao jogo
 
 ---
 
-## Conquistas (Achievements)
+#### US02
+Como jogador,
+quero digitar o ano de um evento histórico e receber resposta imediata,
+para saber se acertei ou errei sem esperar.
 
-Exemplos:
-
-🥇 Cronista do Recife
-Complete 10 eventos sem erro
-
-🏛 Mestre da História
-Complete todas as fases
-
-⚡ Estrategista
-Vencer usando menos de 2 dicas
-
-🧠 Memória de Ferro
-Acertar 5 desafios de ordenação seguidos
+Confirmação:
+* campo de entrada de ano disponível
+* feedback imediato após clicar em "Chutar"
 
 ---
 
-## Ranking
+#### US03
+Como jogador,
+quero ver uma curiosidade histórica ao fim de cada evento — seja acerto ou erro,
+para aprender algo novo independentemente do resultado.
 
-* ranking local
-* pontuação pessoal
-* recordes
-* melhores sessões
-
----
-
-# 📊 Sistema de Perfil e Estatísticas
-
-Além do jogo:
-
-Modo “Analisar Desempenho”
-
-O sistema salva sessões e gera:
-
-## Métricas
-
-* total de partidas
-* média de tentativas
-* melhor sessão
-* pior sessão
-* desvio padrão de desempenho
-* taxa de acertos por tipo de desafio
-* viés do jogador
-
-  * arrisca cedo demais?
-  * exagera nas dicas?
-  * usa estratégia binária eficiente?
+Confirmação:
+* curiosidade exibida na tela de feedback de acerto
+* fato histórico exibido na tela de feedback de erro
+* conteúdo diferente para cada evento
 
 ---
 
-# 🤖 Sistema de Avaliação do Jogador
+#### US04
+Como jogador,
+quero ver minha pontuação atualizada a cada acerto,
+para acompanhar meu desempenho ao longo da partida.
 
-Ao fim das sessões:
-
-Exemplos:
-
-“Você costuma começar com palpites muito baixos.”
-
-“Seu padrão se aproxima de busca binária eficiente.”
-
-“Você erra mais em eventos republicanos do que coloniais.”
-
-Isso transforma estatística em feedback pedagógico.
+Confirmação:
+* pontuação visível na barra superior
+* atualização imediata após cada resposta
 
 ---
 
-# 👥 Público-alvo
+### EPIC 2 — Progressão e encerramento
+
+#### US05
+Como jogador,
+quero saber em qual evento estou (ex: Evento 2/10),
+para entender quanto falta para terminar a partida.
+
+Confirmação:
+* contador de progresso visível (ex: Evento 1/10)
+* avanço automático após cada feedback
+
+---
+
+#### US06
+Como jogador,
+quero ver um resumo da minha performance ao fim da sessão,
+para saber quantos acertei e qual pontuação obtive.
+
+Confirmação:
+* tela de resultado final ao completar os 10 eventos
+* exibição de pontuação total e aproveitamento
+
+---
+
+## 🗂️ Product Backlog (priorizado)
+
+### 🔴 Alta prioridade (MVP)
+
+* Tela inicial com botão "Iniciar Partida"
+* Tutorial "Como Jogar"
+* Desafio de ano por evento histórico
+* Feedback imediato (acerto/erro)
+* Curiosidade/fato histórico por evento
+* Sistema de pontuação (+10 por acerto)
+* Contador de progresso (Evento X/10)
+* Barra de progresso visual
+
+---
+
+### 🟡 Média prioridade
+
+* Tela de resultado final da sessão
+* Histórico de pontuações anteriores
+* Diferentes categorias de eventos (colonial, holandês, republicano...)
+* Dificuldade variável (faixa de anos como dica)
+
+---
+
+### 🟢 Baixa prioridade / expansão
+
+* Ranking entre jogadores
+* Perfil com estatísticas detalhadas
+* Conquistas (ex: 10 acertos seguidos)
+* Modo com dicas progressivas (maior/menor)
+
+---
+
+## 👥 Público-alvo
 
 * estudantes
 * turistas
@@ -256,23 +229,20 @@ Isso transforma estatística em feedback pedagógico.
 
 ---
 
-# 🧭 Diferenciais do Produto
+## 🧭 Diferenciais do Produto
 
-Não é quiz.
+Não é quiz de múltipla escolha.
 
-Não é só jogo de adivinhar datas.
+É um jogo de **precisão histórica** que:
 
-É mistura de:
-
-* timeline game
-* puzzle histórico
-* estratégia
-* análise de desempenho
-* aprendizado adaptativo
+* desafia o jogador a lembrar datas reais
+* ensina através do erro (fato histórico sempre revelado)
+* recompensa o acerto com curiosidades contextualizadas
+* mantém a sessão ágil (10 eventos por partida)
 
 ---
 
-# 👥 Equipe
+## 👥 Equipe
 
 Elisa Martins Galindo Santos
 Kelly Priscilla de Siqueira Melo
@@ -280,9 +250,9 @@ Maria Eduarda Vasconcelos da Silva
 
 ---
 
-# 🧩 Papéis no Projeto
+## 🧩 Papéis no Projeto
 
-## Maria Eduarda Vasconcelos da Silva
+### Maria Eduarda Vasconcelos da Silva
 
 Product Owner / Game Designer
 
@@ -295,7 +265,7 @@ Responsável por:
 
 ---
 
-## Kelly Priscilla de Siqueira Melo
+### Kelly Priscilla de Siqueira Melo
 
 Scrum Master / UX Strategy
 
@@ -308,7 +278,7 @@ Responsável por:
 
 ---
 
-## Elisa Martins Galindo Santos
+### Elisa Martins Galindo Santos
 
 Analista de Requisitos / Backlog Owner
 
@@ -321,188 +291,70 @@ Responsável por:
 
 ---
 
-# 📋 Histórias de Usuário
-
-## EPIC 1 — Progressão e exploração
-
-### US01
-
-Como jogador,
-quero avançar por uma trilha histórica com múltiplos caminhos,
-para explorar a história do Recife de forma progressiva.
-
-Confirmação:
-
-* mapa navegável
-* progressão por fases
-* caminhos corretos/incorretos
-
----
-
-### US02
-
-Como jogador,
-quero enfrentar diferentes tipos de desafios históricos,
-para que a experiência não seja repetitiva.
-
-Confirmação:
-
-* desafios cronológicos
-* ordenação
-* ano perdido
-* trilhas decisórias
-
----
-
-### US03
-
-Como jogador,
-quero desbloquear novas fases temáticas,
-para sentir evolução no jogo.
-
-Confirmação:
-
-* fases bloqueadas/desbloqueadas
-* progresso salvo
-
----
-
-# EPIC 2 — Estratégia e gamificação
-
-### US04
-
-Como jogador,
-quero acumular pontos e conquistas,
-para ser recompensado pelo desempenho.
-
----
-
-### US05
-
-Como jogador,
-quero utilizar dicas e cartas especiais,
-para adotar estratégias durante desafios.
-
----
-
-### US06
-
-Como jogador,
-quero ter vidas e consequências por erro,
-para que minhas escolhas tenham impacto.
-
----
-
-# EPIC 3 — Aprendizagem e análise
-
-### US07
-
-Como jogador,
-quero receber feedback histórico contextual após cada desafio,
-para aprender com os acertos e erros.
-
----
-
-### US08
-
-Como jogador,
-quero visualizar estatísticas do meu desempenho,
-para entender como estou evoluindo.
-
----
-
-### US09
-
-Como jogador,
-quero receber sugestões estratégicas baseadas nas minhas partidas,
-para melhorar minha performance.
-
----
-
-# EPIC 4 — Persistência e histórico (PIF)
-
-### US10
-
-Como jogador,
-quero que minhas sessões sejam registradas,
-para acompanhar meu histórico.
-
----
-
-### US11
-
-Como jogador,
-quero consultar relatórios analíticos das partidas,
-para identificar padrões.
-
----
-
-### US12
-
-Como jogador,
-quero comparar meu desempenho em rankings,
-para aumentar engajamento.
-
----
-
-# 🗂️ Product Backlog (priorizado)
-
-## 🔴 Alta prioridade (MVP FDS)
-
-* Mapa da trilha do tempo
-* Desafios cronológicos
-* Ordenação de eventos
-* Sistema de progressão
-* Pontuação
-* Feedback contextual
-* Conquistas básicas
-
----
-
-## 🟡 Média prioridade
-
-* Vidas
-* Cartas especiais
-* Ranking
-* Fases temáticas
-* Dicas estratégicas
-
----
-
-## 🟢 Baixa prioridade / expansão
-
-* Relatórios analíticos avançados
-* Perfil completo do jogador
-* Sugestões por heurísticas
-* Modos extras
-
----
-
-# 📎 Board do Projeto
+## 📎 Board do Projeto
 
 [link do board](https://www.notion.so/33d7ce26612080c097c2df14dc4f5c91?v=33d7ce266120801ab784000c67441be4&source=copy_link)
 
 📸 [Print do board](https://files.fm/u/fjgdnpx6uk)
 
-📸 Print backlog
-
 ---
 
-# 🎥 Screencast
+## 🎥 Screencast
 
 [link do screencast](https://www.youtube.com/watch?v=dUyouVpBnrw)
 
 ---
 
-# 💻 Repositório
+## 💻 Repositório
 
 [link github](https://github.com/kelly-melo/TrilhaRecife)
 
 ---
 
-# 📌 Status do Projeto
+## 🐛 Bugs Encontrados e Resolvidos
 
-🚧 Em desenvolvimento
+Durante o desenvolvimento, alguns bugs foram identificados e corrigidos ao longo das sprints:
 
-Fase atual:
-Repaginação do produto e prototipação das novas mecânicas.
+| Bug | Descrição | Status |
+|-----|-----------|--------|
+| Campo de ano sem validação | O jogador conseguia submeter o campo vazio, travando a lógica de feedback | ✅ Resolvido |
+| Temporizador não pausava no feedback | O contador continuava rodando mesmo com a tela de acerto/erro aberta | ✅ Resolvido |
+| Pontuação duplicada em clique rápido | Clicar duas vezes rapidamente no botão "Chutar" computava +20 pontos no acerto | ✅ Resolvido |
+| Curiosidade não carregava no primeiro evento | Na primeira rodada, a caixa de curiosidade aparecia em branco por erro de índice | ✅ Resolvido |
+| Barra de progresso fora de sincronia | Os quadradinhos de acerto/erro não correspondiam ao evento atual em casos de navegação rápida | ✅ Resolvido |
+
+---
+
+## ⚠️ Impasses e Desafios do Projeto
+
+### Gestão de Equipe e Tempo
+
+O maior desafio enfrentado pela equipe foi a **combinação entre tamanho reduzido do time e fatores externos** que impactaram diretamente a disponibilidade de cada integrante ao longo do semestre.
+
+Com apenas 3 pessoas, qualquer ausência ou impedimento individual tinha impacto direto no ritmo de entrega. Por fatores externos à equipe — compromissos acadêmicos paralelos, imprevistos pessoais e sobreposição de demandas de outras disciplinas — a gestão do tempo se tornou o principal gargalo do projeto.
+
+Isso exigiu replanejamento constante do backlog e repriorização das histórias a cada sprint, concentrando esforços no que era essencial para o funcionamento do jogo.
+
+### Programação em Pares — Relato
+
+A programação em pares foi adotada de forma parcial ao longo do projeto, especialmente nas funcionalidades de maior complexidade.
+
+**Sprint 01 (Entrega 03):**
+
+Kelly e Eduarda trabalharam juntas na implementação da lógica de feedback (acerto/erro) e na exibição das curiosidades históricas. A sessão ajudou a identificar o bug de índice na primeira rodada antes que fosse para produção. Elisa atuou revisando os critérios de aceitação em paralelo.
+
+**Sprint 02 e 03 (Entrega 04):**
+
+Elisa e Kelly parearam na implementação do temporizador e da barra de progresso visual, onde o bug de sincronia dos quadradinhos foi pego em tempo real durante a sessão. Eduarda contribuiu com a revisão do conteúdo histórico (perguntas, anos e curiosidades) de forma assíncrona.
+
+**Lições aprendidas com o pareamento:**
+
+A prática se mostrou mais eficaz para bugs lógicos do que para tarefas de conteúdo ou estilo. A principal dificuldade foi conciliar horários disponíveis entre as três integrantes, o que fez com que algumas sessões acontecessem de forma remota e assíncrona — funcional, mas menos fluída do que o ideal.
+
+---
+
+## 📌 Status do Projeto
+
+✅ **Concluído — Entrega 04**
+
+Todas as histórias prioritárias foram implementadas. O jogo está funcional com deploy realizado, contendo a mecânica principal de adivinhar o ano de eventos históricos, exibição de curiosidades e fatos históricos, sistema de pontuação, temporizador e barra de progresso por sessão.
